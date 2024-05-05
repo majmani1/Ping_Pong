@@ -1,16 +1,4 @@
 
-addEventListener("keydown", (event) => {
-    if (event.key == ' ')
-    {
-
-        player1.style.transform = "rotate(-80deg)";
-        player1.style.transformOrigin = " bottom left";
-        player1.style.transition = " .1s ease-in-out";
-       }
-
-
-
- });
 var old_width_window = window.innerWidth
 var old_height_window = window.innerHeight
 

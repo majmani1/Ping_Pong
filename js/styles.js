@@ -5,6 +5,7 @@ var player1 = document.querySelector(".player1");
 var result_player1 = document.querySelector(".result_player1");
 var result_player2 = document.querySelector(".result_player2");
 var hold = document.querySelector(".hold");
+var hold2 = document.querySelector(".hold_2");
 var div_score = document.querySelector(".score");
 var line = document.querySelector(".line");
 var div_tir = document.querySelector(".tir");
@@ -20,9 +21,11 @@ var div_tir_style = window.getComputedStyle(div_tir);
 var line_style = window.getComputedStyle(line);
 var div_score_Style = window.getComputedStyle(div_score);
 var player1_Style = window.getComputedStyle(player1);
+var player2_Style = window.getComputedStyle(player2);
 var table_Style = window.getComputedStyle(table);
 var ball_Style = window.getComputedStyle(ball);
 var hold_Style = window.getComputedStyle(hold);
+var hold2_Style = window.getComputedStyle(hold2);
 //------------------BALL----------------------
 var height_ball =  parseInt(ball_Style.height);
 var marginTopBall =  parseInt(ball_Style.marginTop);
@@ -45,12 +48,25 @@ var height_hold =  parseInt(hold_Style.height);
 var width_hold =  parseInt(hold_Style.width);
 var marginTop_hold =  parseInt(hold_Style.marginTop);
 var marginLeft_hold =  parseInt(hold_Style.marginLeft);
+//-----------------hold2----------------------
+var height_hold2 =  parseInt(hold2_Style.height);
+var width_hold2 =  parseInt(hold2_Style.width);
+var marginTop_hold2 =  parseInt(hold2_Style.marginTop);
+var marginLeft_hold2 =  parseInt(hold2_Style.marginLeft);
+
 //-----------------score------------------------
 var height_div_score =  parseInt(div_score_Style.height);
 //-----------------line-------------------------
 var height_line =  parseInt(line_style.height);
 var marginTopline =  parseInt(line_style.marginTop);
 var marginRightline =  parseInt(line_style.marginLeft);
+
+
+//---------------------------------------------------
+var marginTopPlayer2 =  parseInt(player2_Style.marginTop);
+var marginLeftPlayer2 = parseInt(player2_Style.marginLeft)
+var width_players2 =  parseInt(player2_Style.width);
+var height_players2 =  parseInt(player2_Style.height);
 
 
 
@@ -96,8 +112,27 @@ table.style.height = width_table *35/ 100 + "px"
 table.style.height = width_table *35/ 100 + "px"
 ball.style.height = height_table * 2 /100 + "px"
 ball.style.width = height_table * 2 /100 + "px"
-player1.style.height = height_table * 16/100 + "px";
-player1.style.width = width_players * 0.5 + "px"
+ 
+
+
+ 
+
+console.log("ffff ",height_hold2)
+player2.style.marginLeft = width_table - height_players2 + "px"
+player2.style.marginTop = height_table / 2+height_div_score   + "px"
+
+hold2.style.marginLeft = width_table- height_players2   + "px"
+hold2.style.marginTop = height_table / 2+height_div_score   + "px"
+
+
+marginLeftPlayer2 = width_table - height_players2 
+marginTopPlayer2 = height_table / 2+height_div_score
+
+marginLeft_hold2 = width_table  - height_players2
+
+
+//------------------------------------------------
+
 hold.style.height = height_table * 16 / 100 +"px"
 height_hold = height_table * 16 / 100 + "px"
 hold.style.width = height_table * 16 / 100
@@ -119,11 +154,14 @@ var old_height_table = height_table
 var old_height_div_score  = height_div_score
 
 
+
 function play_pause_sound()
 {
     if(sound == "on")
     {
         document.getElementById('audio1').currentTime = 0;
-        document.getElementById('audio1').play();
+        // document.getElementById('audio1').play();
     }
 }
+
+//-------------------- player2 ----------------------------
