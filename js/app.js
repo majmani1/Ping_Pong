@@ -80,7 +80,7 @@ document.addEventListener('mousedown', function(e) {
     });
     var tir_speed = 0;
     document.addEventListener('mouseup', function(e) {
-          
+       
         if (click_souri == "down")
         {
             div_tir.style.cssText = ` background-image: linear-gradient(
@@ -94,8 +94,7 @@ document.addEventListener('mousedown', function(e) {
                     tir_speed = 40 * secondes / 100
                 secondes = 0
         }
-         
-        if ( jonglage == true && player1_or_player2 == "player1")
+        if (player1_or_player2 == "player1" && jonglage == true)
         {
                 speed += tir_speed
             if (left_or_right == "left" )

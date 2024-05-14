@@ -9,6 +9,7 @@ var hold2 = document.querySelector(".hold_2");
 var div_score = document.querySelector(".score");
 var line = document.querySelector(".line");
 var div_tir = document.querySelector(".tir");
+var div_tir2 = document.querySelector(".tir_2");
 
 var score_pl1 = 0;
 var score_pl2 = 0;
@@ -18,6 +19,7 @@ document.getElementById('audio1').pause();
 
 //-----------------style------------------------
 var div_tir_style = window.getComputedStyle(div_tir);
+var div_tir_style2 = window.getComputedStyle(div_tir2);
 var line_style = window.getComputedStyle(line);
 var div_score_Style = window.getComputedStyle(div_score);
 var player1_Style = window.getComputedStyle(player1);
@@ -38,6 +40,9 @@ var height_players =  parseInt(player1_Style.height);
 //----------------div_tir---------------------
 var width_div_tir =  parseInt(div_tir_style.width);
 var height_div_tir =  parseInt(div_tir_style.height);
+//----------------div_tir2---------------------
+var width_div_tir2 =  parseInt(div_tir_style2.width);
+var height_div_tir2 =  parseInt(div_tir_style2.height);
 //-----------------table---------------------
 var height_table =  parseInt(table_Style.height);
 var width_table =  parseInt(table_Style.width);

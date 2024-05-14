@@ -2,8 +2,8 @@ var move_or_stop = "stop"
 
 
 addEventListener("keydown", (event) => {
-    
-    if (player1_or_player2 == "player2" && event.key == ' ')
+    //player1_or_player2 == "player2" &&
+    if ( event.key == ' ')
     {
 
         player2.style.transform = "rotate(80deg)";
@@ -36,10 +36,24 @@ addEventListener("keydown", (event) => {
  
  addEventListener("keyup", (event) => {
   
-    if (player1_or_player2 == "player2" && event.key == ' ')
+    //    if (click_souri == "down")
+    //     {
+    //         div_tir.style.cssText = ` background-image: linear-gradient(
+    //             to right,
+    //             #ff4b09 0%,
+    //             #ff000000 0%
+    //             );`
+    //             div_tir.style.transition = " .1s ease-in-out";
+    //             pauseInterval(chrono)
+    //             click_souri = "up"
+    //                 tir_speed = 40 * secondes / 100
+    //             secondes = 0
+    //     }
+    if (event.key == ' ')
     {
+    
 
-        if (jonglage == true)
+        if (player1_or_player2 == "player2" &&  jonglage == true)
         {
                     // speed += 15
                 if (left_or_right == "left" )
