@@ -68,7 +68,7 @@ var marginLeftPlayer2 = parseInt(player2_Style.marginLeft)
 var width_players2 =  parseInt(player2_Style.width);
 var height_players2 =  parseInt(player2_Style.height);
 
-
+var player1_or_player2 
 
  var sound = "on"
 
