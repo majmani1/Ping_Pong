@@ -21,6 +21,7 @@ function up_down()
 
 function left_right()
 {
+
     // console.log( marginRightBall + height_ball + speed , width_table)
     if (left_or_right == "left" && marginRightBall + height_ball + speed <= width_table )
     {
@@ -31,10 +32,10 @@ function left_right()
                 default_tir = true
                 tir_speed = 0;
                 speed = 10
-            // score_pl1++;
-            // result_player1.innerHTML = score_pl1;
+            score_pl1++;
+            result_player1.innerHTML = score_pl1;
             left_or_right = "right";
-            // score_change = true
+            score_change = true
         }
         ball.style.marginLeft = marginRightBall + "px";
     }
@@ -44,6 +45,7 @@ function left_right()
     }
     if (left_or_right == "right" && marginRightBall >= 0)
     {
+        marginRightBall -= speed;
         if (marginRightBall <= 0)
         {
             score_pl2++;
@@ -52,7 +54,6 @@ function left_right()
             score_change = true
         }
 
-        marginRightBall -= speed;
        
         ball.style.marginLeft = marginRightBall + "px";
     }
@@ -72,7 +73,6 @@ function left_right()
 
 function move_ball()
 {
-    console.log(marginLeft_hold2 + width_hold2)
     height_hold =  parseInt(hold_Style.height);
     width_hold2 =  parseInt(hold2_Style.width);
     marginTop_hold2 =  parseInt(hold2_Style.marginTop);
@@ -80,7 +80,7 @@ function move_ball()
     if (jonglage == false && (marginRightBall >= marginLeft_hold2 + (width_hold2 / 2)  && marginRightBall < marginLeft_hold2 + width_hold2)
     && marginTopBall >= marginTop_hold2 - height_div_score && marginTopBall < marginTop_hold2 - height_div_score + height_hold2)
     { 
-        clearInterval(intervalId) 
+        // clearInterval(intervalId) 
         jonglage = true
         init = false
     }
@@ -190,7 +190,7 @@ function jonglage_ball()
     marginLeft_hold2 =  parseInt(hold2_Style.marginLeft);
     if (left_or_right == "left")
     {
-        old_position_ball = marginRightBall + ((height_hold2* 50) /100 )  ;
+        old_position_ball = marginRightBall   ;
         old_position_ball_top = marginTopBall
        ball.style.marginTop = marginTop_hold2 - height_hold2   + "px" 
        ball.style.marginLeft = marginLeft_hold2  + ((height_hold2*1.7) )   + "px"
@@ -214,7 +214,7 @@ var intervalId_jonglage = setInterval(function() {
     {
         
         if (init == false)
-        jonglage_ball()
+            jonglage_ball()
     if (left_or_right == "left")
     {
         player2.style.transform = "rotate(90deg)";

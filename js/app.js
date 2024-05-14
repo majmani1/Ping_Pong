@@ -101,8 +101,10 @@ document.addEventListener('mousedown', function(e) {
     }
     document.addEventListener('mousemove', function(e) {
 
-    if (jonglage == false)
+    if (left_or_right == "right" && jonglage == true)
     {
+        return
+    }
         var x = e.clientX
         var y = e.clientY
         // console.log(check_move_player(x,y))
@@ -124,7 +126,7 @@ document.addEventListener('mousedown', function(e) {
         else
             table.style.cursor = "not-allowed"
 
-    }
+   
 
 
     });
