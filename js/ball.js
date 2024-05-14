@@ -73,10 +73,17 @@ function left_right()
 function move_ball()
 {
     console.log(marginLeft_hold2 + width_hold2)
+    height_hold =  parseInt(hold_Style.height);
     width_hold2 =  parseInt(hold2_Style.width);
+    marginTop_hold2 =  parseInt(hold2_Style.marginTop);
     marginLeft_hold2 =  parseInt(hold2_Style.marginLeft);
-    if (jonglage == false && (marginRightBall >= marginLeft_hold2  && marginRightBall < marginLeft_hold2 + width_hold2) )
-        clearInterval(intervalId)
+    if (jonglage == false && (marginRightBall >= marginLeft_hold2 + (width_hold2 / 2)  && marginRightBall < marginLeft_hold2 + width_hold2)
+    && marginTopBall >= marginTop_hold2 - height_div_score && marginTopBall < marginTop_hold2 - height_div_score + height_hold2)
+    { 
+        clearInterval(intervalId) 
+        jonglage = true
+        init = false
+    }
 
     if (jonglage == false && (marginRightBall >= marginLeft_hold   && marginRightBall < marginLeft_hold + width_hold - (width_hold * 50 / 100))
     && marginTopBall >= marginTop_hold - height_div_score && marginTopBall < marginTop_hold - height_div_score + height_hold )//- (width_hold * 50 / 100)
@@ -108,7 +115,12 @@ function move_ball_in_jonglage()
 {
     if (init == true)
     {
-        if (jonglage_top_bottom == "buttom" && marginTopBall + height_ball + 5  <= marginTop_hold  - height_hold   )
+        let mr_top
+        if (left_or_right == "left")
+                mr_top = marginTop_hold2
+        else    
+            mr_top = marginTop_hold
+        if (jonglage_top_bottom == "buttom" && marginTopBall + height_ball + 5  <= mr_top  - height_hold)
         {
             jonglage_up_down = "up"
             marginTopBall += 5;
@@ -116,7 +128,7 @@ function move_ball_in_jonglage()
         }
         else
               jonglage_top_bottom = "top"
-        if (jonglage_top_bottom == "top" && marginTopBall  >= marginTop_hold - height_div_score  )
+        if (jonglage_top_bottom == "top" && marginTopBall  >= mr_top - height_div_score  )
         {
             jonglage_up_down = "down"
 
@@ -172,10 +184,25 @@ function tt()
 
 function jonglage_ball()
 {
-    old_position_ball = marginRightBall + ((height_hold* 50) /100 )  ;
-    old_position_ball_top = marginTopBall
-   ball.style.marginTop = marginTop_hold - height_hold   + "px" 
-   ball.style.marginLeft = marginLeft_hold  - ((height_hold* 80) /100 )   + "px"
+    height_hold =  parseInt(hold_Style.height);
+    width_hold2 =  parseInt(hold2_Style.width);
+    marginTop_hold2 =  parseInt(hold2_Style.marginTop);
+    marginLeft_hold2 =  parseInt(hold2_Style.marginLeft);
+    if (left_or_right == "left")
+    {
+        old_position_ball = marginRightBall + ((height_hold2* 50) /100 )  ;
+        old_position_ball_top = marginTopBall
+       ball.style.marginTop = marginTop_hold2 - height_hold2   + "px" 
+       ball.style.marginLeft = marginLeft_hold2  + ((height_hold2*1.7) )   + "px"
+    }
+    else if(left_or_right == "right")
+    {
+        old_position_ball = marginRightBall + ((height_hold* 50) /100 )  ;
+        old_position_ball_top = marginTopBall
+       ball.style.marginTop = marginTop_hold - height_hold   + "px" 
+       ball.style.marginLeft = marginLeft_hold  - ((height_hold* 80) /100 )   + "px"
+
+    }
 //    speed += tir_speed
 
    init = true
@@ -188,9 +215,19 @@ var intervalId_jonglage = setInterval(function() {
         
         if (init == false)
         jonglage_ball()
-    player1.style.transform = "rotate(-90deg)";
-    player1.style.transformOrigin = " bottom left";
-    player1.style.transition = " .1s ease-in-out";
+    if (left_or_right == "left")
+    {
+        player2.style.transform = "rotate(90deg)";
+        player2.style.transformOrigin = " bottom left";
+        player2.style.transition = " .1s ease-in-out";
+    }
+    if (left_or_right == "right")
+    {
+        player1.style.transform = "rotate(-90deg)";
+        player1.style.transformOrigin = " bottom left";
+        player1.style.transition = " .1s ease-in-out";
+    
+    }
     play = false
 }
 else if (jonglage_up_down == "down" && jonglage == true)
@@ -200,9 +237,16 @@ else if (jonglage_up_down == "down" && jonglage == true)
         play_pause_sound()
         play = true
     }
-    
-    player1.style.transform = "rotate(-80deg)";
-    player1.style.transition = " .0s ease-in";
+    if (left_or_right == "left")
+    {
+        player2.style.transform = "rotate(80deg)";
+        player2.style.transition = " .0s ease-in";
+    }
+    else if(left_or_right == "right")
+    {
+        player1.style.transform = "rotate(-80deg)";
+        player1.style.transition = " .0s ease-in";
+    }
 
 
     }

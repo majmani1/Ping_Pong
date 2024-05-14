@@ -2,26 +2,27 @@ var move_or_stop = "stop"
 
 
 addEventListener("keydown", (event) => {
-    if (event.key == ' ')
-    {
-
-        player2.style.transform = "rotate(80deg)";
-        player2.style.transformOrigin = " bottom left";
-        player2.style.transition = " .1s ease-in-out";
-       }
-    //    if (check_move_player2() == 0)
-    //    {
-       if (event.key == "ArrowUp")
-            move_or_stop = "up"
-       if (event.key == "ArrowLeft")
-            move_or_stop = "left"
-
-       if (event.key == "ArrowRight")
-            move_or_stop = "right"
-
-       if (event.key == "ArrowDown")
-            move_or_stop = "down"
-    //    }
+  
+        if (event.key == ' ')
+        {
+    
+            player2.style.transform = "rotate(90deg)";
+            player2.style.transformOrigin = " bottom left";
+            player2.style.transition = " .1s ease-in-out";
+           }
+     
+           if (event.key == "ArrowUp")
+                move_or_stop = "up"
+           if (event.key == "ArrowLeft")
+                move_or_stop = "left"
+    
+           if (event.key == "ArrowRight")
+                move_or_stop = "right"
+    
+           if (event.key == "ArrowDown")
+                move_or_stop = "down"
+    
+ 
 
  });
 
@@ -29,35 +30,40 @@ addEventListener("keydown", (event) => {
 
  
  addEventListener("keyup", (event) => {
-    if (event.key == ' ')
-    {
+    // if (left_or_right == "left")
+    // {
+        if (event.key == ' ')
+        {
+            player2.style.transform = "rotate(-25deg)";
+            player2.style.transformOrigin = " bottom left";
+            player2.style.transition = " .1s ease-in-out";
+            // if (jonglage == true)
+            // {
+            //     if (left_or_right == "left" )
+            //         left_or_right = "right"
+            //     else
+            //         left_or_right = "left"
+            //     jonglage = false
+            //     marginRightBall = old_position_ball +  25
+            //     jonglage_up_down = "stop"
 
-        // if (jonglage == true)
-        // {
-        //     if (left_or_right == "left" )
-        //         left_or_right = "right"
-        //     else
-        //         left_or_right = "left"
-        //     jonglage = false
-        //     marginRightBall = old_position_ball +  25
-        //     jonglage_up_down = "stop"
+            // }
 
-        // }
-
-        player2.style.transform = "rotate(-25deg)";
-        player2.style.transition = " .0s ease-in";
-       }
-      
-            if (event.key == "ArrowUp")
-                    move_or_stop = "stop"
-            if (event.key == "ArrowLeft")
-                    move_or_stop = "stop"
+            player2.style.transform = "rotate(-25deg)";
+            player2.style.transition = " .0s ease-in";
+        }
         
-            if (event.key == "ArrowRight")
-                    move_or_stop = "stop"
-        
-            if (event.key == "ArrowDown")
-                    move_or_stop = "stop"
+                if (event.key == "ArrowUp")
+                        move_or_stop = "stop"
+                if (event.key == "ArrowLeft")
+                        move_or_stop = "stop"
+            
+                if (event.key == "ArrowRight")
+                        move_or_stop = "stop"
+            
+                if (event.key == "ArrowDown")
+                        move_or_stop = "stop"
+            // }
       
 
 

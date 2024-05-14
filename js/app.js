@@ -36,25 +36,26 @@ var old_height_window = window.innerHeight
  var old_position_ball_top
 
 document.addEventListener('mousedown', function(e) {
-    var x = e.clientX
-        var y = e.clientY
-    if (check_move_player(x,y) == 0){
-        if (jonglage == false)
-            chrono =   startInterval()
-        click_souri = "down"
- 
-        secondes = 0
     
-        player1.style.transform = "rotate(-80deg)";
-        player1.style.transformOrigin = " bottom left";
-        player1.style.transition = " .1s ease-in-out";
-    }
+            var x = e.clientX
+            var y = e.clientY
+        if (check_move_player(x,y) == 0){
+            if (jonglage == false)
+                chrono =   startInterval()
+            click_souri = "down"
+    
+            secondes = 0
+        
+            player1.style.transform = "rotate(-80deg)";
+            player1.style.transformOrigin = " bottom left";
+            player1.style.transition = " .1s ease-in-out";
+        }
+   
 
-
-    });
+});
     var tir_speed = 0;
     document.addEventListener('mouseup', function(e) {
-
+   
         if (click_souri == "down")
         {
             div_tir.style.cssText = ` background-image: linear-gradient(
@@ -68,7 +69,7 @@ document.addEventListener('mousedown', function(e) {
                     tir_speed = 40 * secondes / 100
                 secondes = 0
         }
-        if (jonglage == true)
+        if (left_or_right == "right" &&  jonglage == true)
         {
                 speed += tir_speed
             if (left_or_right == "left" )
@@ -87,7 +88,6 @@ document.addEventListener('mousedown', function(e) {
         player1.style.transform = "rotate(25deg)";
         player1.style.transition = " .0s ease-in";
  
-
     });
 
     function check_move_player(x,y)
