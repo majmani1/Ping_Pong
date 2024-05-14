@@ -117,7 +117,6 @@ ball.style.width = height_table * 2 /100 + "px"
 
  
 
-console.log("ffff ",height_hold2)
 player2.style.marginLeft = width_table - height_players2 + "px"
 player2.style.marginTop = height_table / 2+height_div_score   + "px"
 

@@ -335,6 +335,7 @@ img{
     inset 0 0 1.25vw 1vw #ededed;
     background-color: #02EB98;
     display: none;
+    z-index: 1;
 }
 
 .player1{

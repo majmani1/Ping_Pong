@@ -2,7 +2,6 @@ var move_or_stop = "stop"
 
 
 addEventListener("keydown", (event) => {
-    console.log("eeee," ,event.key)
     if (event.key == ' ')
     {
 
@@ -73,10 +72,8 @@ addEventListener("keydown", (event) => {
     marginTopPlayer2 =  parseInt(player2_Style.marginTop);
     width_players2 =  parseInt(player2_Style.width);
     height_players2 =  parseInt(player2_Style.height);
-    console.log("OOOO ",(marginTopPlayer2  )   ,height_div_score + height_table)
     if (move_or_stop == "down" &&  (marginTopPlayer2 + height_table * 2 /100) + height_players2 > height_div_score + height_table)
         return 1
- 
     else if (move_or_stop == "up" && (marginTopPlayer2 - height_table * 2 /100) < height_div_score)
             return 1
     else if (move_or_stop == "left" && (marginLeftPlayer2 - width_table * 2 /100) < width_table/2)
@@ -108,7 +105,6 @@ function move_player()
     }
     else if (move_or_stop == "left")
     {
-        console.log(marginLeftPlayer2 , " //// ")
         marginLeftPlayer2 -= width_table * 1/100 
         player2.style.marginLeft = marginLeftPlayer2+ height_hold2 + "px";
         hold2.style.marginLeft = marginLeftPlayer2 + "px";

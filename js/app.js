@@ -9,29 +9,6 @@ var old_height_window = window.innerHeight
 
 
  
- addEventListener("keyup", (event) => {
-    if (event.key == ' ')
-    {
-
-        if (jonglage == true)
-        {
-            if (left_or_right == "left" )
-                left_or_right = "right"
-            else
-                left_or_right = "left"
-            jonglage = false
-            marginRightBall = old_position_ball +  25
-            jonglage_up_down = "stop"
-
-        }
-
-        player1.style.transform = "rotate(25deg)";
-        player1.style.transition = " .0s ease-in";
-       }
-
-
-
- });
  var secondes = 0;
 
  function time()

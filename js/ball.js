@@ -72,7 +72,11 @@ function left_right()
 
 function move_ball()
 {
-   
+    console.log(marginLeft_hold2 + width_hold2)
+    width_hold2 =  parseInt(hold2_Style.width);
+    marginLeft_hold2 =  parseInt(hold2_Style.marginLeft);
+    if (jonglage == false && (marginRightBall >= marginLeft_hold2  && marginRightBall < marginLeft_hold2 + width_hold2) )
+        clearInterval(intervalId)
 
     if (jonglage == false && (marginRightBall >= marginLeft_hold   && marginRightBall < marginLeft_hold + width_hold - (width_hold * 50 / 100))
     && marginTopBall >= marginTop_hold - height_div_score && marginTopBall < marginTop_hold - height_div_score + height_hold )//- (width_hold * 50 / 100)
