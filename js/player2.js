@@ -10,22 +10,22 @@ addEventListener("keydown", (event) => {
         player2.style.transformOrigin = " bottom left";
         player2.style.transition = " .1s ease-in-out";
         if (jonglage == false)
-        chrono =   startInterval()
-    click_souri = "down"
+            chrono =   startInterval()
+        click_souri = "down"
 
-    secondes = 0
+        secondes = 0
        }
     //    if (check_move_player2() == 0)
     //    {
-       if (event.key == "ArrowUp")
+       if (jonglage == false && event.key == "ArrowUp")
             move_or_stop = "up"
-       if (event.key == "ArrowLeft")
+       if (jonglage == false && event.key == "ArrowLeft")
             move_or_stop = "left"
 
-       if (event.key == "ArrowRight")
+       if (jonglage == false && event.key == "ArrowRight")
             move_or_stop = "right"
 
-       if (event.key == "ArrowDown")
+       if (jonglage == false && event.key == "ArrowDown")
             move_or_stop = "down"
     //    }
 
@@ -40,13 +40,12 @@ addEventListener("keydown", (event) => {
     {
 
         if (jonglage == true)
-            {
+        {
                     // speed += 15
                 if (left_or_right == "left" )
                     left_or_right = "right"
                 else
                     left_or_right = "left"
-                
                 play_pause_sound()
                 
                 marginRightBall = old_position_ball 

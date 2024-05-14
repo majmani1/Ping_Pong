@@ -97,15 +97,19 @@ function renisialisation()
       {
          ball.style.marginTop  =  height_table * marginTopBall / old_height_table + "px"
          ball.style.marginLeft  =  window.innerWidth* (marginRightBall ) / old_width_window    + "px"
+         marginTopBall = height_table * marginTopBall / old_height_table
+         marginRightBall = window.innerWidth* (marginRightBall ) / old_width_window
       }
       else
       {
          ball.style.marginTop = marginTop_hold - height_hold   + "px" 
          ball.style.marginLeft = marginLeft_hold  - ((height_hold* 80) /100 )   + "px"
+         marginTopBall = marginTop_hold - height_hold
+         marginRightBall = marginLeft_hold  - ((height_hold* 80) /100 )
 
       }
-      marginTopBall =  parseInt(ball_Style.marginTop);
-      marginRightBall =  parseInt(ball_Style.marginLeft);
+      // marginTopBall =  parseInt(ball_Style.marginTop);
+      // marginRightBall =  parseInt(ball_Style.marginLeft);
       // marginLeft_hold2 = width_table - height_players2 
 
    speed =    10

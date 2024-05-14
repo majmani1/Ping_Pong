@@ -215,7 +215,7 @@ function jonglage_ball()
     {
         player1_or_player2 = "player1"
 
-        old_position_ball = marginRightBall + ((height_hold* 50) /100 )  ;
+        old_position_ball = marginRightBall + (height_hold  )  ;
         old_position_ball_top = marginTopBall
        ball.style.marginTop = marginTop_hold - height_hold   + "px" 
        ball.style.marginLeft = marginLeft_hold  - ((height_hold* 80) /100 )   + "px"
@@ -223,15 +223,13 @@ function jonglage_ball()
     else if(  left_or_right == "left" )
     {
         player1_or_player2 = "player2"
-        old_position_ball = marginRightBall + ((height_hold2* 50) /100 )  ;
+        old_position_ball = marginRightBall - (height_hold2  )  ;
         old_position_ball_top = marginTopBall
-        console.log("OOOO ",old_position_ball,old_position_ball_top)
        ball.style.marginTop = marginTop_hold2 - (height_hold2 * 2)  + "px" 
        ball.style.marginLeft = marginLeft_hold2  + ((height_hold2* 100) /100 ) + ((height_hold2* 50) /100 )   + "px"
     }
     marginTopBall =  parseInt(ball_Style.marginTop);
       marginRightBall =  parseInt(ball_Style.marginLeft);
-      console.log("LLLL ",old_position_ball,old_position_ball_top)
 
 //    speed += tir_speed
 
