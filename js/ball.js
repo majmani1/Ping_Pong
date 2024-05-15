@@ -49,6 +49,7 @@ function left_right()
             score_pl2++;
             result_player2.innerHTML = score_pl2;
             left_or_right = "left";
+            
             score_change = true
         }
 
@@ -76,19 +77,21 @@ function move_ball()
       marginLeft_hold2 =  parseInt(hold2_Style.marginLeft);
       width_hold2 =  parseInt(hold2_Style.width);
       console.log(left_or_right) 
-    //   console.log("PPP ",  marginLeft_hold2 , width_hold2, marginRightBall)
+ 
     if (jonglage == false && marginRightBall >= marginLeft_hold2 &&  marginRightBall < marginLeft_hold2 + width_hold2  
         && marginTopBall >= marginTop_hold2 - height_div_score && marginTopBall < marginTop_hold2 - height_div_score + height_hold2)
         {  
-            // clearInterval(intervalId)
+ 
+            speed = 10;
             jonglage = true
             init = false
         }
 
     else if (jonglage == false && (marginRightBall >= marginLeft_hold   && marginRightBall < marginLeft_hold + width_hold - (width_hold * 50 / 100))
-    && marginTopBall >= marginTop_hold - height_div_score && marginTopBall < marginTop_hold - height_div_score + height_hold )//- (width_hold * 50 / 100)
+    && marginTopBall >= marginTop_hold - height_div_score && marginTopBall < marginTop_hold - height_div_score + (height_hold  ) )//- (width_hold * 50 / 100)
     { 
-        // clearInterval(intervalId)
+        speed = 10;
+ 
         jonglage = true
         init = false
     }
@@ -303,8 +306,16 @@ function time_jonglage()
             marginRightBall = old_position_ball +  25
             // jonglage_up_down = "stop"
             jonglage = false
-            player1.style.transform = "rotate(25deg)";
-            player1.style.transition = " .0s ease-in";
+            if (player1_or_player2 == "player1")
+            {
+                player1.style.transform = "rotate(25deg)";
+                player1.style.transition = " .0s ease-in";
+            }
+            else if (player1_or_player2 == "player2")
+            {
+                player2.style.transform = "rotate(-25deg)";
+                player2.style.transition = " .0s ease-in";
+            }
             q = 0
         }
     }

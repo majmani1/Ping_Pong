@@ -10,52 +10,56 @@ addEventListener("keydown", (event) => {
         player2.style.transformOrigin = " bottom left";
         player2.style.transition = " .1s ease-in-out";
         if (jonglage == false)
-            chrono =   startInterval()
+            chrono2 =   startInterval2()
         click_souri = "down"
 
         secondes = 0
        }
     //    if (check_move_player2() == 0)
     //    {
-       if (jonglage == false && event.key == "ArrowUp")
+        if (jonglage == true && player1_or_player2 == "player2")
+            return
+       if ( event.key == "ArrowUp")
             move_or_stop = "up"
-       if (jonglage == false && event.key == "ArrowLeft")
+       if ( event.key == "ArrowLeft")
             move_or_stop = "left"
 
-       if (jonglage == false && event.key == "ArrowRight")
+       if ( event.key == "ArrowRight")
             move_or_stop = "right"
 
-       if (jonglage == false && event.key == "ArrowDown")
+       if ( event.key == "ArrowDown")
             move_or_stop = "down"
     //    }
 
  });
-
-
+ 
+//  var tir_speed = 0
 
  
  addEventListener("keyup", (event) => {
   
-    //    if (click_souri == "down")
-    //     {
-    //         div_tir.style.cssText = ` background-image: linear-gradient(
-    //             to right,
-    //             #ff4b09 0%,
-    //             #ff000000 0%
-    //             );`
-    //             div_tir.style.transition = " .1s ease-in-out";
-    //             pauseInterval(chrono)
-    //             click_souri = "up"
-    //                 tir_speed = 40 * secondes / 100
-    //             secondes = 0
-    //     }
-    if (event.key == ' ')
-    {
+     if (event.key == ' ')
+     {
+        if (click_souri == "down")
+         {
+             div_tir2.style.cssText = ` background-image: linear-gradient(
+                 to right,
+                 #ff4b09 0%,
+                 #ff000000 0%
+                 );`
+                 div_tir2.style.transition = " .1s ease-in-out";
+                 pauseInterval2(chrono2)
+                 click_souri = "up"
+                tir_speed = 40 * secondes2 / 100
+                console.log("lllll ",tir_speed)
+                 secondes2 = 0
+         }
     
 
         if (player1_or_player2 == "player2" &&  jonglage == true)
         {
-                    // speed += 15
+            speed += tir_speed
+
                 if (left_or_right == "left" )
                     left_or_right = "right"
                 else
@@ -104,7 +108,7 @@ addEventListener("keydown", (event) => {
             return 1
     else if (move_or_stop == "left" && (marginLeftPlayer2 - width_table * 2 /100) < width_table/2)
         return 1
-    else if (move_or_stop == "right" && (marginLeftPlayer2 + width_table * 2 /100 + height_players2) > width_table )
+    else if (move_or_stop == "right" && (marginLeftPlayer2 + width_table * 2 /100 + height_players2) > width_table - width_hold2 )
         return 1
     return 0
  }

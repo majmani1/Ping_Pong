@@ -93,20 +93,42 @@ function renisialisation()
       hold2.style.width = height_table * 16 / 100 + "px"
       width_hold2 = height_hold2
 
-      if (jonglage == false)
+      if (player1_or_player2=="player1")
       {
-         ball.style.marginTop  =  height_table * marginTopBall / old_height_table + "px"
-         ball.style.marginLeft  =  window.innerWidth* (marginRightBall ) / old_width_window    + "px"
-         marginTopBall = height_table * marginTopBall / old_height_table
-         marginRightBall = window.innerWidth* (marginRightBall ) / old_width_window
+         if (jonglage == false)
+         {
+            ball.style.marginTop  =  height_table * marginTopBall / old_height_table + "px"
+            ball.style.marginLeft  =  window.innerWidth* (marginRightBall ) / old_width_window    + "px"
+            marginTopBall = height_table * marginTopBall / old_height_table
+            marginRightBall = window.innerWidth* (marginRightBall ) / old_width_window
+         }
+         else
+         {
+            ball.style.marginTop = marginTop_hold - height_hold   + "px" 
+            ball.style.marginLeft = marginLeft_hold  - ((height_hold* 80) /100 )   + "px"
+            marginTopBall = marginTop_hold - height_hold
+            marginRightBall = marginLeft_hold  - ((height_hold* 80) /100 )
+   
+         }
       }
-      else
-      {
-         ball.style.marginTop = marginTop_hold - height_hold   + "px" 
-         ball.style.marginLeft = marginLeft_hold  - ((height_hold* 80) /100 )   + "px"
-         marginTopBall = marginTop_hold - height_hold
-         marginRightBall = marginLeft_hold  - ((height_hold* 80) /100 )
 
+      else if (player1_or_player2=="player2")
+      {
+         if (jonglage == false)
+         {
+            ball.style.marginTop  =  height_table * marginTopBall / old_height_table + "px"
+            ball.style.marginLeft  =  window.innerWidth* (marginRightBall ) / old_width_window    + "px"
+            marginTopBall = height_table * marginTopBall / old_height_table
+            marginRightBall = window.innerWidth* (marginRightBall ) / old_width_window
+         }
+         else
+         {
+            ball.style.marginTop = marginTop_hold2 - height_hold2   + "px" 
+            ball.style.marginLeft = marginLeft_hold2  + (height_hold2)   + "px"
+            marginTopBall = marginTop_hold2 - height_hold2
+            marginRightBall = marginLeft_hold2  + (height_hold2  )
+   
+         }
       }
       // marginTopBall =  parseInt(ball_Style.marginTop);
       // marginRightBall =  parseInt(ball_Style.marginLeft);

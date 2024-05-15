@@ -33,9 +33,12 @@ var old_height_window = window.innerHeight
 
 //  });
  var secondes = 0;
+ var secondes2 = 0;
 
  function time()
  {
+    if (secondes >= width_div_tir)
+        return
      secondes += parseInt(width_div_tir * 10 /100)
     div_tir.style.cssText = ` background-image: linear-gradient(
         to right,
@@ -43,17 +46,41 @@ var old_height_window = window.innerHeight
         #ff000000 ${secondes}%
       );`
  }
- function pauseInterval(chrono) {
-     clearInterval(chrono);
-     secondes += parseInt(width_div_tir * 10 /100)
 
+ function time2()
+ {
+    if (secondes2 >= width_div_tir2)
+        return
+     secondes2 += parseInt(width_div_tir2 * 10 /100)
+    div_tir2.style.cssText = ` background-image: linear-gradient(
+        to right,
+        #ff4b09 5%,
+        #ff000000 ${secondes2}%
+      );`
  }
+
+ function pauseInterval(chrono) {
+    clearInterval(chrono);
+    secondes += parseInt(width_div_tir * 10 /100)
+
+
+} 
+var chrono2
+function pauseInterval2(chrono2) {
+    clearInterval(chrono2);
+    secondes2 += parseInt(width_div_tir2 * 10 /100)
+
+}
  var click_souri = "up"
   
  function startInterval() {
-       chrono =  window.setInterval(time, 70);
-       return chrono
- }
+    chrono =  window.setInterval(time, 70);
+    return chrono
+}
+ function startInterval2() {
+    chrono2 =  window.setInterval(time2, 70);
+    return chrono2
+}
  
 
  var old_position_ball_top
@@ -121,7 +148,7 @@ document.addEventListener('mousedown', function(e) {
  
         if (y < height_div_score || y + height_players > height_div_score + height_table)
             return 1
-        if (x < width_players + height_hold / 2 || x > width_table/2)
+        if (x < width_players + height_hold || x > width_table/2)
             return 1
         return 0
     }
